@@ -176,14 +176,14 @@ function onUp(e) {
 
   if (Math.abs(dd.x) > Math.abs(dd.y)) {
     ax = 'y'; lv = ly;
-    dir = dd.x > 0 ? -1 : 1;
+    dir = dd.x > 0 ? 1 : -1;
     if (Math.abs(fn.y) > 0.5 && fn.y < 0) dir *= -1;
     else if (Math.abs(fn.z) > 0.5 && fn.z < 0) dir *= -1;
     else if (Math.abs(fn.x) > 0.5 && fn.x < 0) dir *= -1;
   } else {
-    if (Math.abs(fn.y) > 0.5) { ax = 'z'; lv = lz; dir = dd.y > 0 ? 1 : -1; if (fn.y < 0) dir *= -1; }
-    else if (Math.abs(fn.z) > 0.5) { ax = 'x'; lv = lx; dir = dd.y > 0 ? 1 : -1; if (fn.z < 0) dir *= -1; }
-    else { ax = 'z'; lv = lz; dir = dd.y > 0 ? 1 : -1; if (fn.x > 0) dir *= -1; }
+    if (Math.abs(fn.y) > 0.5) { ax = 'z'; lv = lz; dir = dd.y > 0 ? -1 : 1; if (fn.y < 0) dir *= -1; }
+    else if (Math.abs(fn.z) > 0.5) { ax = 'x'; lv = lx; dir = dd.y > 0 ? -1 : 1; if (fn.z < 0) dir *= -1; }
+    else { ax = 'z'; lv = lz; dir = dd.y > 0 ? -1 : 1; if (fn.x > 0) dir *= -1; }
   }
 
   rotateLayer(ax, lv, dir * Math.PI / 2);
