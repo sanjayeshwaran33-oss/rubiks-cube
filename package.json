@@ -1,0 +1,21 @@
+{
+  "name": "rubiks-cube-app",
+  "version": "1.0.0",
+  "description": "Interactive 3D Rubik's Cube with accounts, timer & leaderboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.9.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "uuid": "^14.0.0"
+  }
+}

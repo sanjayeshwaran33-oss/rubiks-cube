@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive 3D Rubik's Cube with timer, leaderboard and accounts">
+  <title>Rubik's Cube App</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- Auth Modal -->
+<div id="auth-modal" class="modal hidden">
+  <div class="modal-content glass">
+    <h2 id="auth-title">Login</h2>
+    <form id="auth-form">
+      <input id="auth-display" type="text" placeholder="Display Name" class="hidden" autocomplete="name">
+      <input id="auth-user" type="text" placeholder="Username" required autocomplete="username">
+      <input id="auth-pass" type="password" placeholder="Password" required autocomplete="current-password">
+      <button type="submit" class="btn-primary" id="auth-submit">Login</button>
+      <p class="auth-switch">
+        <span id="auth-toggle-text">Don't have an account?</span>
+        <a href="#" id="auth-toggle">Sign Up</a>
+      </p>
+      <p id="auth-error" class="error-text hidden"></p>
+    </form>
+  </div>
+</div>
+
+<!-- Top Bar -->
+<header id="top-bar">
+  <div class="top-left">
+    <h1>🎲 Rubik's Cube</h1>
+  </div>
+  <div class="top-right">
+    <button id="btn-leaderboard" class="btn-icon" title="Leaderboard">🏆</button>
+    <button id="btn-stats" class="btn-icon" title="My Stats">📊</button>
+    <div id="user-area">
+      <button id="btn-login" class="btn-ghost">Login</button>
+    </div>
+    <div id="user-info" class="hidden">
+      <span id="user-avatar" class="avatar"></span>
+      <span id="user-name"></span>
+      <button id="btn-logout" class="btn-ghost btn-sm">Logout</button>
+    </div>
+  </div>
+</header>
+
+<!-- Timer -->
+<div id="timer-panel">
+  <div id="timer-display">0.00</div>
+  <div id="timer-controls">
+    <button id="btn-timer-start" class="btn-accent">▶ Start Timer</button>
+    <button id="btn-timer-stop" class="btn-accent hidden">⏹ Stop</button>
+  </div>
+  <div id="timer-result" class="hidden">
+    <span id="result-time"></span>
+    <span id="result-moves"></span>
+    <button id="btn-save-solve" class="btn-sm btn-primary hidden">Save Solve</button>
+  </div>
+</div>
+
+<!-- Bottom Controls -->
+<div id="controls-panel">
+  <button id="btn-scramble" class="btn-glass">🔀 Scramble</button>
+  <button id="btn-reset" class="btn-glass">↺ Reset</button>
+</div>
+
+<!-- Side Panel (Stats/Leaderboard) -->
+<div id="side-panel" class="hidden">
+  <div class="side-header">
+    <h2 id="side-title">Leaderboard</h2>
+    <button id="btn-close-side" class="btn-icon">✕</button>
+  </div>
+  <div id="side-content"></div>
+</div>
+
+<!-- Instructions -->
+<div id="instructions">
+  <kbd>Drag</kbd> face → rotate layer &nbsp;|&nbsp;
+  <kbd>Drag</kbd> empty → orbit &nbsp;|&nbsp;
+  <kbd>Scroll</kbd> zoom &nbsp;|&nbsp;
+  <button id="btn-keys" class="btn-ghost btn-sm">⌨ Keys</button>
+</div>
+
+<!-- Keyboard Shortcuts Panel -->
+<div id="keys-panel" class="hidden glass">
+  <h3>Keyboard Shortcuts</h3>
+  <div class="keys-grid">
+    <div class="key-row"><kbd>U</kbd> <span>Up face ↻</span></div>
+    <div class="key-row"><kbd>D</kbd> <span>Down face ↻</span></div>
+    <div class="key-row"><kbd>R</kbd> <span>Right face ↻</span></div>
+    <div class="key-row"><kbd>L</kbd> <span>Left face ↻</span></div>
+    <div class="key-row"><kbd>F</kbd> <span>Front face ↻</span></div>
+    <div class="key-row"><kbd>B</kbd> <span>Back face ↻</span></div>
+    <div class="key-row"><kbd>M</kbd> <span>Middle (X) ↻</span></div>
+    <div class="key-row"><kbd>E</kbd> <span>Middle (Y) ↻</span></div>
+    <div class="key-row" style="grid-column:1/-1;text-align:center;color:var(--text-dim);font-size:12px">
+      Hold <kbd>Shift</kbd> + key for counter-clockwise ↺
+    </div>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+} }
+</script>
+<script type="module" src="/cube.js"></script>
+<script src="/app.js" defer></script>
+</body>
+</html>
