@@ -1,21 +1,13 @@
 {
-  "name": "rubiks-cube-app",
+  "name": "orkestrim-2k26",
   "version": "1.0.0",
-  "description": "Interactive 3D Rubik's Cube with accounts, timer & leaderboard",
-  "main": "server.js",
+  "description": "ORKESTRIM 2K26 Netflix-themed College Symposium Platform with Live CMS",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd frontend && npm run preview",
+    "dev": "cd frontend && npm run dev"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "better-sqlite3": "^12.9.0",
-    "express": "^5.2.1",
-    "express-session": "^1.19.0",
-    "uuid": "^14.0.0"
-  }
+  "keywords": ["orkestrim", "netflix", "symposium", "react", "vite"],
+  "author": "SFMUFASASANJAY",
+  "license": "ISC"
 }
