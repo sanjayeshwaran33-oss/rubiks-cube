@@ -1,4 +1,37 @@
+# Dependencies & environment
 node_modules/
-rubikscube.db
+dist/
 .env
 *.log
+
+# Databases & local state
+rubikscube.db*
+
+# Other workspace projects (kept local)
+aquaguard-ai/
+medikiosk/
+WealthHabit/
+sih2026-water-treatment/
+rubics cube/
+learn/
+trial
+react
+final.html
+generate_ppt.py
+pptx_content.txt
+replace.py
+rubiks-cube.html
+update_team.py
+wealthhabit.html
+zero-gravity.*
+ZeroGravity.jsx
+Finamo_Presentation.md
+day01.js
+space-habitat.svg
+logo.svg
+server.js
+database.js
+routes/
+/public/
+template_shapes.txt
+/index.html
